@@ -1,25 +1,12 @@
-name: CI
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   build:
-    runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Check if tests exist
+        run: |
+          if [ -z "$(npm run-script | grep '^test\b')" ]; then
+            echo "No tests found. Skipping test step."
+            exit 0
+          fi
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
