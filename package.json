@@ -1,0 +1,16 @@
+{
+    "name": "console-logger",
+    "version": "1.0.0",
+    "description": "A simple package for logging messages to the console.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "console",
+      "logger"
+    ],
+    "author": "SAMZ",
+    "license": "MIT"
+  }
+  
