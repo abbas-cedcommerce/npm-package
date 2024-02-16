@@ -12,4 +12,6 @@ jobs:
       - name: Run tests
         run: |
           CURRENT_USER=$(whoami)
+          GITHUB_USERNAME=${GITHUB_ACTOR}
           echo "Current user is: $CURRENT_USER"
+          echo "GitHub username is: $GITHUB_USERNAME"
